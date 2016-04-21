@@ -53,7 +53,7 @@ DogeDodge.Play.prototype = {
     // movement keys
     this.cursors = game.input.keyboard.createCursorKeys();
   },
-
+   game.physics.arcade.collide(this.dodge,this.dodger,this.handleCollision);
   update: function() {
     if (this.cursors.left.isDown) {
       this.dodger.body.velocity.x = -800;
@@ -66,7 +66,7 @@ DogeDodge.Play.prototype = {
       this.dodge.body.velocity.y = 0;
       this.dodge.x = game.rnd.integerInRange(0,320);
     }
-    game.physics.arcade.collide(this.dodge,this.dodger,this.handleCollision);
+    
   },
 
   handleCollision: function() {
